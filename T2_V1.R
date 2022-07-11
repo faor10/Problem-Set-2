@@ -471,6 +471,8 @@ prediccion_ridgefinal_testing<-rename(prediccion_ridgefinal_testing, ridgefinal_
 prediccion_mejor_mod<-data.frame(prediccion_ridgefinal_testing$id,prediccion_ridgefinal_testing$ridgefinal_prediccion)
 prediccion_mejor_mod<-rename(prediccion_mejor_mod, Prediccion_final_pobre =prediccion_ridgefinal_testing.ridgefinal_prediccion)
 prediccion_mejor_mod<-rename(prediccion_mejor_mod, Hogar =prediccion_ridgefinal_testing.id)
+write.csv(prediccion_mejor_mod,"C:/Users/francisco.alejandro1/Documents/BD/Problem Set 2/Problem-Set-2/document/resultados_clasificacion.csv", row.names = FALSE)
+
 
 ##Guardamos las especificaciones del modelo###
 with(prediccion_ridgeup_testing,prop.table(table(Pobre,ridgeup_prediccion))) ##Un 7.21% son falsos negativos, es decir, el modelo no predice correctamente el 16.9% de los pobres
